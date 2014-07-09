@@ -32,7 +32,12 @@ private
   end
 
   def check_is_closed sides
-    raise "not implemented" 
+    error=ArgumentError.new("Not closed")
+    raise error if not_closed sides 
+  end
+
+  def not_closed sides
+    raise "not implemented"
   end
 
 end
