@@ -14,14 +14,14 @@ class Triangle<Polygon
 private 
   
   def check_sides sides
-    check_sides_are_numbers sides
+    check_sides_are_positive_numbers sides
     check_number_of_sides sides
     check_is_closed sides
   end
 
-  def check_sides_are_numbers sides
-    error=ArgumentError.new("Non  numeric side length")
-    not_numeric=sides.select{|side| side.class!=Fixnum }.size != 0
+  def check_sides_are_positive_numbers sides
+    error=ArgumentError.new("Non positive numeric side length")
+    not_numeric=sides.select{|side| (side.class!=Fixnum)||(side<=0) }.size != 0
     raise error if not_numeric
   end
 

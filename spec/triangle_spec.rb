@@ -21,8 +21,9 @@ describe "A Triangle " do
     expect{Triangle.new(2,2,4)}.to raise_error(ArgumentError)
   end
 
-  it "should have all sides as numbers" do
+  it "should have all sides as positive numbers" do
     expect{Triangle.new(1,"patata",4)}.to raise_error(ArgumentError)
+    expect{Triangle.new(20,-5,4)}.to raise_error(ArgumentError)
   end
 
 end
