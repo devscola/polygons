@@ -26,4 +26,10 @@ describe "A Triangle " do
     expect{Triangle.new(20,-5,4)}.to raise_error(ArgumentError)
   end
 
+  it "knows its perimeter" do
+    expect(Triangle.new(2,2,3).perimeter).to eq(7)
+    expect(Triangle.new(3,3,3).perimeter).to eq(9)
+    expect(Triangle.new(6,5,7).perimeter).to eq(18)
+  end
+
 end

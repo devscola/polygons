@@ -3,6 +3,7 @@ class Polygon
   def initialize(*sides)
     set_number_of_sides
     check_sides(sides)
+    @sides=sides
   end
 
   def number_of_sides
