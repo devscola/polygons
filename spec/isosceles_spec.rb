@@ -13,5 +13,8 @@ describe "Isosceles" do
     end.to_not raise_error(ArgumentError)   
   end  
 
+  it "still knows how to calculate its perimeter" do
+    expect(Isosceles.new(2,3).perimeter).to eq(7)   
+  end
 
 end
