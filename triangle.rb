@@ -9,6 +9,9 @@ private
   end
 
   def not_closed sides
-    (sides[0]+sides[1]<= sides[2])|| (sides[0]+sides[2]<= sides[1])|| (sides[2]+sides[1]<= sides[0])
+    bigest_side = sides.max
+    perimeter= sides.inject { |sum, side| sum+side }
+    sum_of_lesser_sides = (perimeter - bigest_side)
+    sum_of_lesser_sides <= bigest_side
   end
 end
