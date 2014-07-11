@@ -1,2 +1,4 @@
-class Isosceles
+require './triangle'
+
+class Isosceles<Triangle
 end
