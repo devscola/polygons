@@ -22,8 +22,7 @@ private
 
   def check_sides_are_positive_numbers sides
     error=ArgumentError.new("Non positive numeric side length")
-    not_numeric=sides.select{|side| (side.class!=Fixnum)||(side<=0) }.size != 0
-    raise error if not_numeric
+    not_numeric=sides.each{|side| raise error if side <= 0 }
   end
 
   def check_number_of_sides sides
